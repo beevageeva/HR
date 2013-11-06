@@ -1,0 +1,36 @@
+wxhr.py
+ejecución:
+python wxhr.py -l listiso -i dhr7.dat
+parametros:
+	listiso - fichero con los nombres de las isocronas uno para cada línea: 
+	dhr7.dat : el fichero que representa el diagrama CMD a analizar: 
+		línea  de comentarios empieza con #
+		la primera columna representa el color (Mv-Mi) y la segunda Mi
+
+las isocronas tienen que ser en el formato de las isocronas bajadas para esta practica:
+	las líneas de los comentarios empiezan por # 
+	los valores que nos intersan están en:
+		columna 1  log(edad), 2 masa inicial, 10: Mv, 12: Mi 
+
+Si las opciones -l y -i no se especifican por defecto intenta cargar  ["isocz0004.dat" , "isocz001.dat",  "isocz004.dat" , "isocz008.dat", "isocz019.dat", "isocz030.dat"] como ficheros de la isocrona y dhr7.dat como fichero del diagrama a analizar
+
+Menu del programa:
+	File->Exit
+	Isochrone files -> New para cargar un nuevo fichero de isocronas
+	Isochrone files -> List -> aparece una lista con todas las isocronas cargadas con un checkbox en frente para poder hacer (in)visibles todas las isocronas 
+asociadas a esta metalicidad (eso se hace pulsando el botón Ages que te muestra las edades para cual hay una isocrona definida). 
+	Isochrone files -> Show legend
+	Isochrone files -> Masa inicial minima: representa las isocronas para todas las masas a prtir de un valor (en unidades solares)
+	Help -> About  muestra información sobre las isocronas pintadas para ser mas facil convertir en los valores para iac-star
+	Help -> Clear plot quita todas las isocronas del gráfico
+	Help -> Replot repinta todas las isocronas(usado en la fase de dsarrollo cuando tenía líneas sin referencia en el programa)
+Las isocronas se pueden seleccionar directamente en el gráfico con el ratón si están a una distancia de menos de 0.05(este valor es hardcoded) te aparecen en una  lista a la derecha (picked lines) y asi se pueden quitar o reponer en el grafico. La lista se borra pulsando el boton clear
+
+
+en testisochrones hay unos scripts para analizar las isocronas: la relación con la masa inicial, metalicidad, la similitud de las curvas en el diagrama HR original (Luminosidad - Teff) y CMD (Mi - color)
+
+video.mkv una grabación de pantalla de la ejecución del programa
+paper.pdf, aparicio.pdf la documentación 
+
+
+
