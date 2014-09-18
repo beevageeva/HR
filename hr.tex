@@ -126,6 +126,14 @@ De las tablas de isocronas se pueden definir la isocronas como  funciones de la 
 \item Relación con la metalicidad: La isocrona para estrellas con mas metalicidad está siempre más a la derecha (testisoz.py)
 y por abajo.
 Mas metalicidad implica menor temperatura y menor luminosidad(la metalicidad es una fuente de opacidad y  una estrella tendrá un radio menor que otra con mas metalicidad y la misma masa. Además en las ultimas etapas las estrellas con mas metalicidad pierden mas masa)
+\par Observando la decomposición en isocronas de los diagramas de los cúmulos globulares(donde se supone que todas las estrellas tienen metalicidad parecida), las isocronas para edad mayor están más a a la derecha y abajo (la distancia entre ellas sobre todo se observa en la zona turnoff de la secuencia principal)
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[scale=0.7]{gciso.png}
+ \caption{\emph{Estimacion de la edad de un cumulo globular}}
+ \label{Fig: 2}
+\end{figure}
 \end{itemize}
 
 \textbf{Procedimiento}
@@ -149,7 +157,8 @@ donde
 \item En el programa se pueden cargar tablas de isocronas (para una metalicidad) elegir las isocronas que se representan para cada una(tambien mostrarlas y ocularlas por grupo), definir la masa inicial minima para cual se representan las isocronas, seleccionar las isocronas en el grafico. Hay una demonstración(grabación de pantalla): video.mkv y leer el readme
 \item La edad total es 17.78 (consideramos la edad maxima presente en la tabla de las isocronas log(edad) = 10.25 que es presente como isocrona en el diagrama)
 \item Consideramos formación continua en el intervalo[$t_1$, $t_2$]  si existen isocronas para todas las edades en el intervalo log(e) in [$edad_1$, $edad_2$,  (step=0.05)], $t_1=EdadTotal - 10^{edad_2}, t_2=EdadTotal - 10^{edad_1}$. De forma similar definimos CEL1 = z1 y CEL2 = z2 en el intervalo [$t_1, t_2$] si z1=$\displaystyle \min_{i \in isochrones(edad)} metalicity(i)$ y z2=$\displaystyle \max_{i \in isocrones(edad)} metalicity(i)$ para todas las edades  en el intervalo log(edad) in [$edad_1$, $edad_2$,  (step=0.05)]. Mirar Help,About en el menu del programa
-\item Comprobamos los resultados en iac-star con los siguentes parametros que representan mas o menos la salida del programa de Fig1(he considerado SFR = 1 en los intervalos donde hay formación continua: 2 episodios de formación estelar entre tiempo [0..3.66]Gy y [7.78..15.28]Gy - no hay ninguna isocrona para log(age) in \{10.05, 10.1\}, tiempo = EdadTotal - edad; la metalicidad es entre 0.0004 y 0.008, he modificado un poco las funciones  CEL1 y CEL2 para que sean crecientes y tengo en cuenta que la IMF favorece las estrellas con masa inicial baja)
+\item Comprobamos los resultados en iac-star con los siguentes parametros que representan mas o menos la salida del programa de Fig1
+He considerado SFR = 1 en los intervalos donde hay formación continua: 2 episodios de formación estelar entre tiempo [0..3.66]Gy y [7.78..15.28]Gy - no hay ninguna isocrona para log(age) in \{10.05, 10.1\}, tiempo = EdadTotal - edad; la metalicidad es entre 0.0004 y 0.008, he modificado un poco las funciones  CEL1 y CEL2 para que sean crecientes(en general la metalicidad crece en el tiempo porque al final de su vida las estrellas enriquecen el medio interestelar con los metales producidos durante ella) y tengo en cuenta que la IMF favorece las estrellas con masa inicial baja
 
 \begin{description}
 
